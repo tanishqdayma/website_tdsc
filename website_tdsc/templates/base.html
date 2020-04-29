@@ -1,0 +1,370 @@
+{% load static wagtailuserbar %}
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            {% block title %}
+                {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
+            {% endblock %}
+            {% block title_suffix %}
+                {% with self.get_site.site_name as site_name %}
+                    {% if site_name %}- {{ site_name }}{% endif %}
+                {% endwith %}
+            {% endblock %}
+        </title>
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {# Global stylesheets #}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/website_tdsc.css' %}">
+
+
+        <!----css styles -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+        <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+        
+        <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+        <link rel="stylesheet" href="static/css/ionicons.min.css">
+        
+        <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+        <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+        <link rel="stylesheet" href="{% static 'css/website_tdsc.css' %}">
+        <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+
+        <link rel="stylesheet" href="static/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
+        <link rel="stylesheet" href="{% static 'css/jquery.scrollbar.css' %}">
+
+        <link rel="stylesheet" href="{% static 'css/fancybox.min.css' %}">
+        <link rel="stylesheet" href="{% static/css/swiper.min.css">
+
+		<style>
+			  footer{
+    /* position: fixed; */
+    bottom: 0;
+  }
+  
+  @media (max-height:800px){
+    footer { position: static; }
+    header { padding-top:40px; }
+  }
+  
+  
+  .footer-distributed{
+    background-color: #020421;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 50px 50px 60px 50px;
+    margin-top: 80px;
+  }
+  
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right{
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  /* Footer left */
+  
+  .footer-distributed .footer-left{
+    width: 30%;
+  }
+  
+  .footer-distributed h3{
+    color:  #ffffff;
+    font: normal 36px '',;
+    margin: 0;
+  }
+  
+  /* The company logo */
+  
+  .footer-distributed .footer-left img{
+    width: 30%;
+  }
+  
+  .footer-distributed h3 span{
+    color:  #e0ac1c;
+  }
+  
+  /* Footer links */
+  
+  .footer-distributed .footer-links{
+    color:  #ffffff;
+    margin: 20px 0 12px;
+  }
+  
+  .footer-distributed .footer-links a{
+    display:inline-block;
+    line-height: 1.8;
+    text-decoration: none;
+    color:  inherit;
+  }
+  
+  .footer-distributed .footer-company-name{
+    color:  #8f9296;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+  }
+  
+  /* Footer Center */
+  
+  .footer-distributed .footer-center{
+    width: 35%;
+  }
+  
+  
+  .footer-distributed .footer-center i{
+    background-color:  #33383b;
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+  }
+  
+  .footer-distributed .footer-center i.fa-envelope{
+    font-size: 17px;
+    line-height: 38px;
+  }
+  
+  .footer-distributed .footer-center p{
+    display: inline-block;
+    color: #ffffff;
+    vertical-align: middle;
+    margin:0;
+  }
+  
+  .footer-distributed .footer-center p span{
+    display:block;
+    font-weight: normal;
+    font-size:14px;
+    line-height:2;
+  }
+  
+  .footer-distributed .footer-center p a{
+    color:  #e0ac1c;
+    text-decoration: none;;
+  }
+  
+  
+  /* Footer Right */
+  
+  .footer-distributed .footer-right{
+    width: 30%;
+  }
+  
+  .footer-distributed .footer-company-about{
+    line-height: 20px;
+    color:  #92999f;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+  }
+  
+  .footer-distributed .footer-company-about span{
+    display: block;
+    color:  #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .footer-distributed .footer-icons{
+    margin-top: 25px;
+  }
+  
+  .footer-distributed .footer-icons a{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color:  #33383b;
+    border-radius: 2px;
+  
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+  
+    margin-right: 3px;
+    margin-bottom: 5px;
+  }
+  
+  
+  @media (max-width: 880px) {
+  
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right{
+      display: block;
+      width: 100%;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+  
+    .footer-distributed .footer-center i{
+      margin-left: 0;
+    }
+  
+  }
+		</style>
+
+
+        {% block extra_css %}
+            {# Override this in templates to add extra stylesheets #}
+        {% endblock %}
+    </head>
+
+    <body class="{% block body_class %}{% endblock %}">
+        {% wagtailuserbar %}
+
+        <!-- header section begins -->
+        <div class="container pt-3">
+			<div class="row justify-content-between">
+				<div class="col">
+					<a class="navbar-brand" style="font-size: xx-large; text-align: center; padding-bottom: 0%;" href="index.html">Technology And <span>Development Solutions Cell</span></a>
+				</div>
+				 <div class="col d-flex justify-content-end"> 
+					<!-- <div class="social-media"> -->
+                        <img width="150" height="150" src="static/images/IIT_Bombay_color_logo.png" class="" style="padding-bottom: 10px;"> </a>
+		    			<!--<p class="mb-0 d-flex">
+		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+		    		</p>
+	        </div> -->
+				</div> 
+			</div>
+		</div>
+		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" style="background-color: #020421 !important;">
+	    <div class="container">
+	    
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="fa fa-bars"></span> Menu
+	      </button>
+				<form action="#" class="searchform order-lg-last">
+          <div class="form-group d-flex">
+            <input type="text" class="form-control pl-3" style="font-size: large;" placeholder="Search">
+            <button type="submit" placeholder="" class="form-control search"><span class="fa fa-search"></span></button>
+          </div>
+        </form>
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav mr-auto">
+	        	<li class="nav-item active"><a href="home_page.html" class="nav-link" style="font-size: large;">Home</a></li>
+	        	<li class="nav-item"><a href="about.html" class="nav-link" style="font-size: large;">About</a></li>
+	        	<li class="nav-item"><a href="services.html" class="nav-link" style="font-size: large;">Services</a></li>
+	        	<li class="nav-item"><a href="projects.html" class="nav-link" style="font-size: large;">Projects</a></li>
+	        	<li class="nav-item"><a href="resources.html" class="nav-link" style="font-size: large;">Resources</a></li>
+              <li class="nav-item"><a href="outreach.html" class="nav-link" style="font-size: large;">Outreach</a></li>
+              <li class="nav-item"><a href="contact.html" class="nav-link" style="font-size: large;">Contact</a></li>
+              <!-- <li class="nav-item"><a href="contact.html" class="nav-link" style="font-size: large;">Contact</a></li> -->
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+        <!-- header section ends -->
+
+
+        {% block content %}{% endblock %}
+
+
+       <!-- Footer Section Begin -->
+    <!-- Footer Content -->
+
+    <footer class="footer-distributed">
+
+		<div class="footer-left">
+  
+		  <h3>Technology and Development Solutions Cell</h3>
+  
+		  <p class="footer-links">
+			<a href="#">Home</a>
+			|
+			<a href="#">About</a>
+			|
+			<a href="#">Services</a>
+			|
+			<a href="#">Contact</a>
+		  </p>
+  
+		  <p class="footer-company-name">© 2020 TDSC, IIT Bombay</p>
+		</div>
+  
+		<div class="footer-center">
+		  <div>
+			<i class="fa fa-map-marker"></i>
+			  <p><span>Main Gate Rd, IIT Area, Powai</span>
+			  Mumbai, Maharashtra 400076</p>
+		  </div>
+  
+		  <div>
+			<i class="fa fa-phone"></i>
+			<p>+91 22-27782183</p>
+		  </div>
+		  <div>
+			<i class="fa fa-envelope"></i>
+			<p><a href="mailto:support@tdsc.com">support@tdsc.com</a></p>
+		  </div>
+		</div>
+		<div class="footer-right">
+		  <p class="footer-company-about">
+			<span>About TDSC</span>
+			TDSC provides resources and services to undertake projects that deliver outputs via academic research outputs, consulting, outreach modules, entrepreneurship guidance, etc. TDSC not only aims at delivering solutions to external stakeholders but primarily uses the academic platform to engage students directly in development -related problems and solutions.</p>
+		  <div class="footer-icons">
+			<a href="#"><i class="fa fa-facebook"></i></a>
+			<a href="#"><i class="fa fa-twitter"></i></a>
+			<a href="#"><i class="fa fa-instagram"></i></a>
+			<a href="#"><i class="fa fa-linkedin"></i></a>
+			<a href="#"><i class="fa fa-youtube"></i></a>
+		  </div>
+		</div>
+	  </footer>
+	  <!-- Footer Section End -->
+
+        {# Global javascript #}
+        <script type="text/javascript" src="{% static 'js/website_tdsc.js' %}"></script>
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+      <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+      <script src="{% static 'js/popper.min.js' %}"></script>
+      <script src="{% static 'js/bootstrap.min.js' %}"></script>
+      <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+      <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+      <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+      <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+      <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+      <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+      <script src="{% static 'js/scrollax.min.js' %}"></script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+      <script src="{% static 'js/google-map.js' %}"></script>
+	  <script src="{% static 'js/main.js' %}"></script>
+	  <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+  	  <script src="{% static 'js/swiper.min.js' %}"></script>
+      <script src="{% static 'js/jquery.scrollbar.js' %}"></script>
+        {% block extra_js %}
+            <!-- {# Override this in templates to add extra javascript #} -->
+            <script>
+              window.onbeforeunload = function () {
+                window.scrollTo(0, 0);
+              }
+            </script>
+        {% endblock %}
+    </body>
+</html>

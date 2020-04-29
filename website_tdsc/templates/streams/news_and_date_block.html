@@ -1,0 +1,20 @@
+{% load wagtailcore_tags %}
+{% load static %}
+
+
+<div class="item">
+    <div class="testimony-wrap py-4">
+        <!-- <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-quote-left"></span></div> -->
+      <div class="text">
+        <p class="mb-4">{{ self.text }}</p> 
+        <div class="d-flex align-items-center">
+            <!-- <div class="user-img" style="background-image: url(images/person_1.jpg)"></div> -->
+            <div class="pl-3">
+                <p class="name">{{ self.date_of_event }}</p>
+                <!-- <span class="position">Marketing Manager</span> -->
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+ 
