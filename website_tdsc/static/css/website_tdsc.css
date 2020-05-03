@@ -5300,10 +5300,10 @@
     -webkit-transition: .3s all ease;
     -o-transition: .3s all ease;
     transition: .3s all ease;
-    color: #fdbe34; }
+    color: #007bff; }
     a:hover, a:focus {
       text-decoration: none;
-      color: #fdbe34;
+      color:#0056b3;
       outline: none !important; }
   
   h1, h2, h3, h4, h5,
