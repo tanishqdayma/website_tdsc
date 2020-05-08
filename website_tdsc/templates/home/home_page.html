@@ -379,6 +379,20 @@
 .style-scrollbar-sm {
   height: 100px; }
 
+  #section-counter {
+    position: relative;
+    z-index: 0;
+    background: #f8f9fd; }
+    #section-counter:after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      content: '';
+      z-index: -1;
+      opacity: 1;
+      width: 50%;
+      background: #fdbe34; }
 
 	</style>
   </head>
@@ -411,7 +425,7 @@
 	  <!-- WHAT IS TDSC -->
 	  <div class="site-half" style="padding-top: 20px;">
 
-		<div class="img-bg-1" style="background-image: url('static/images/IMG_20180906_130450.jpg');" data-aos="fade"></div>
+		<div class="img-bg-1" data-aos="fade" style="background-image: url('/static/images/IMG_20180906_130450.jpg');"></div>
 		<div class="container">
 		  <div class="row no-gutters align-items-stretch">
 			<div class="col-lg-5 ml-lg-auto py-5" style="padding-right: 0%;">

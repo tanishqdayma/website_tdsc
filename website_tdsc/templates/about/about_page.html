@@ -1,0 +1,321 @@
+{% extends "base.html" %}
+{% load static wagtailuserbar %}
+{% load static %}
+{% load wagtailimages_tags %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+
+{% block extra_css %}
+<style>
+
+
+  #section-counter {
+    position: relative;
+    z-index: 0; }
+    #section-counter:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      content: '';
+      z-index: -1;
+      opacity: .9;
+      background: #0d1128;
+      background: #0d1128;
+      background: -moz-linear-gradient(45deg, #0d1128 0%, #fd6100 100%);
+      background: -webkit-gradient(left bottom, right top, color-stop(0%, #0d1128), color-stop(100%, #fd6100));
+      background: -webkit-linear-gradient(45deg, #0d1128 0%, #fd6100 100%);
+      background: -o-linear-gradient(45deg, #0d1128 0%, #fd6100 100%);
+      background: -ms-linear-gradient(45deg, #0d1128 0%, #fd6100 100%);
+      background: linear-gradient(45deg, #0d1128 0%, #fd6100 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d1128', endColorstr='#fd6100', GradientType=1 ); }
+
+      .ftco-counter {
+  overflow-x: hidden;
+  position: relative; }
+  @media (max-width: 1199.98px) {
+    .ftco-counter {
+      background-position: top center !important; } }
+  .ftco-counter .img-video {
+    width: 100%;
+    display: block; }
+    @media (max-width: 767.98px) {
+      .ftco-counter .img-video {
+        height: 300px; } }
+  .ftco-counter .icon span {
+    font-size: 50px;
+    color: #000000;
+    line-height: 1; }
+  .ftco-counter .block-18 {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px; }
+  .ftco-counter .text strong.number {
+    font-weight: 600;
+    font-size: 40px;
+    color: #fff;
+    display: block; }
+  .ftco-counter .text span {
+    display: block;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8); }
+  @media (max-width: 767.98px) {
+    .ftco-counter .counter-wrap {
+      margin-bottom: 20px; } }
+
+
+
+    .col-md-6{
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px; }
+
+  .d-flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important; }
+
+  img {
+  vertical-align: middle;
+  max-height: 100%;
+  max-width: 100%;
+  border-style: none; }
+
+  .d-flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important; }
+
+  .embed-responsive video {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0; }
+
+  .video {
+  width: 100%;
+  position: relative; }
+
+.icon-video {
+  width: 80px;
+  height: 80px;
+  background: #fff;
+  -webkit-box-shadow: 0px 0px 34px -8px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 0px 34px -8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 34px -8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  margin: 0 auto;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%; }
+  .icon-video span {
+    font-size: 30px;
+    color: #fd5f00;
+   }
+
+    .pl-lg-5,
+  .px-lg-5 {
+    padding-left: 3rem !important; }
+
+    .pt-5,
+.py-5 {
+  padding-top: 3rem !important; }
+
+  .mb-4,
+.my-4 {
+  margin-bottom: 1.5rem !important; }
+
+
+  .heading-section .subheading {
+  font-weight: 500;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(0, 0, 0, 0.9);
+  position: relative; }
+
+.heading-section h2 {
+  font-size: 44px;
+  font-weight: 600; }
+  @media (max-width: 767.98px) {
+    .heading-section h2 {
+      font-size: 28px; } }
+
+.heading-section.heading-section-white .subheading {
+  color: rgba(255, 255, 255, 0.7); }
+
+.heading-section.heading-section-white h2 {
+  font-size: 40px;
+  color: #fff; }
+
+.heading-section.heading-section-white p {
+  color: rgba(255, 255, 255, 0.9); }
+
+.heading-section.heading-section-black h2 {
+  color: #000000; }
+
+  .ftco-animate {
+  opacity: 0;
+  visibility: hidden; }
+
+/* .ftco-section {
+  padding: 7em 0;
+  position: relative; } */
+
+.ftco-no-pt {
+  padding-top: 0; }
+
+.ftco-no-pb {
+  padding-bottom: 0; }
+
+  .mb-5,
+.my-5 {
+  margin-bottom: 3rem !important; }
+
+  ul
+  li {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+</style>
+
+{% endblock %}
+
+<section class="hero-wrap hero-wrap-2" style="background-image: url('/static/images/IMG_20180427_130235_1.jpg');" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row no-gutters slider-text align-items-end">
+        <div class="col-md-9 ftco-animate pb-5">
+            <p class="breadcrumbs mb-2"><span class="mr-2"><a href="{% slugurl 'home' %}">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>About us <i class="ion-ios-arrow-forward"></i></span></p>
+          <h1 class="mb-0 bread">About Us</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+     
+   <section class="ftco-section ftco-no-pt ftco-no-pb">
+      <div class="container">
+          <div class="row d-flex no-gutters">
+
+              <!-- <div class="col-md-6 pl-md-5"> -->
+                  <!-- <div class="row justify-content-start py-5"> -->
+                <div class="col-md-12 heading-section ftco-animate pl-md-4 py-md-4">
+                   <!-- <span class="subheading">Welcome to Home Builder</span> --> 
+                  <h2 class="mb-4">What is TDSC?</h2>
+                  <p  style="text-align: justify;">Technology and Development Solutions Cell is a resource center for providing technology solutions for development problems. It is an ongoing initiative of CTARA, which aims to supply consultancy services to the development needs of various entities at the bottom 80%, such as habitations, gram panchayats, small towns, district and taluka administrations and so on. </p>
+                  <div class="tabulation-2 mt-4">
+                                  <ul class="nav nav-pills nav-fill d-md-flex d-block">
+                                    <li class="nav-item mb-md-0 mb-2">
+                                      <a class="nav-link active py-2" data-toggle="tab" href="#home1">Goals of TDSC</a>
+                                    </li>
+                                    <li class="nav-item px-lg-2 mb-md-0 mb-2">
+                                      <a class="nav-link py-2" data-toggle="tab" href="#home2">Organizational Structure</a>
+                                    </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link py-2 mb-md-0 mb-2" data-toggle="tab" href="#home3">Ownership and Access</a>
+                                    </li>
+                                  </ul>
+                                  <div class="tab-content bg-light rounded mt-2"  style="text-align: justify;">
+                                    <div class="tab-pane container p-0 active" id="home1">
+                                        <p><ul>TDSC focuses all its activities to further at least one of the following three goals:
+
+                                          <li style="color: #212529;">Enable students to seek opportunities in the development sector (the supply side)</li>
+                                          
+                                          <li style="color: #212529;">Establish business and collaboration models (the demand side, 'market' for knowledge products)</li>
+                                          
+                                          <li style="color: #212529;">Enable adoption of practice oriented engineering pedagogy (the outreach component)</li></ul></p>
+                                    </div>
+                                    <div class="tab-pane container p-0 fade" id="home2">
+                                        <p>TDSC operates as a CTARA project under IIT Bombay's Industrial Research and Consulting Centre (IRCC), with a principal investigator and co-principal investigators. All the projects under TDSC are independent projects under IRCC with their own PI and Co-PI. All the hiring, purchases, expenditures, billings done by TDSC follow IRCC norms.</p>
+                                    </div>
+                                    <div class="tab-pane container p-0 fade" id="home3">
+                                        <p>TDSC intends for all its output to be in the public domain under the Creative Commons Attribution-Sharealike License. Any reports produced by TDSC which is governed by non-disclosure contracts with clients is not put in the public domain. Thus, for a typical project, primary data, methodology, tools, etc. owned by TDSC is made public for further use, adoption and improvement. The final output reports submitted and owned by the client are not made public without explicit permission from the client.</p>
+                                    </div>
+                                  </div>
+                              </div>
+                <!-- </div> -->
+              <!-- </div> -->
+          </div>
+      </div>
+      </div>
+  </section> 
+
+
+  <section class="ftco-section" style="padding-top: 40px;">
+      <div class="container">
+        {% for block in page.background %}
+            {% include_block block %}
+        {% endfor %}
+      </div>
+  </section>
+
+
+
+
+  <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url('/static/images/IMG_20180906_130450.jpg'); background-size: cover; background-repeat:no-repeat;">
+    <div class="container">
+      <div class="row justify-content-center mb-5 pb-2 d-flex">
+        <div class="col-md-6 align-items-stretch d-flex" style="padding-top: 20px; padding-bottom: 0%;">
+          <div class="img img-video d-flex align-items-center" style="background-image: url('/static/images/video1.png'); background-size: contain,cover; background-repeat:no-repeat;">
+            <div class="video justify-content-center" style="position:relative; height: 550px;">
+              <a href="https://www.youtube.com/watch?v=fc5WsQBJqcs" class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
+                <span class="ion-ios-play"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 heading-section heading-section-white ftco-animate pl-lg-5 pt-md-0" style="padding-top: 0%; text-align: justify;">
+          <h2 class="mb-4">CTARA Response</h2>
+          <p>{{ self.CTARA_response|richtext }}</p>
+          <!-- <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p> -->
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="ftco-section" style="padding-top: 40px; padding-bottom: 20px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 wrap-about py-5 pr-md-4 ftco-animate"  style="text-align: justify;">
+                <h5 class="font-weight-bold">Proposal</h5>
+                {% for block in page.proposal %}
+                    {% include_block block %}
+                {% endfor %}
+            </div>
+           
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section ftco-no-pt ftc-no-pb" style="padding-top: 40px;">
+  <div class="container">
+    <div class="row d-flex">
+      <div class="col-md-5 order-md-last wrap-about wrap-about d-flex align-items-stretch">
+        <div class="img" style="background-image: url('/static/images/SBD_5636.jpg'); width: 100%; background-size: cover; background-repeat:no-repeat;"></div>
+      </div>
+      <div class="col-md-7 wrap-about py-5 pr-md-4 ftco-animate"  style="text-align: justify;">
+        <h2 class="font-weight-bold">Business Model</h2>
+        <p>{{ self.business_model|richtext }}</p>
+        <!-- <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p> -->
+        <!-- <p>On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their</p> -->
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

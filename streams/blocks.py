@@ -3,7 +3,7 @@ from wagtail.images.blocks import ImageChooserBlock
 from wagtail.documents.blocks import DocumentChooserBlock
 
 
-
+# Home Page Blocks
 class NewsBlock(blocks.StructBlock):
     """Text and date and nothing else."""
 
@@ -25,3 +25,28 @@ class GalleryBlock(blocks.StructBlock):
         template = "streams/gallery.html"
         icon="edit"
         label="Image"
+
+# About Page Blocks
+
+
+class RichtextBackgroundBlock(blocks.StructBlock):
+    """Richtext with all the features."""
+
+    text1 = blocks.RichTextBlock(icon="text")
+    text2 = blocks.RichTextBlock(icon="text")
+
+    class Meta:  # noqa
+        template = "streams/richtext_bg_block.html"
+        icon = "doc-full"
+        label = "Full RichText"
+
+class RichtextProposalBlock(blocks.StructBlock):
+    """Richtext with all the features."""
+
+    text = blocks.RichTextBlock(icon='text')
+
+    class Meta:  # noqa
+        template = "streams/richtext_proposal_block.html"
+        icon = "doc-full"
+        label = "Full RichText"
+

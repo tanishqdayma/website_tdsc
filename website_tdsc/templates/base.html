@@ -1,4 +1,8 @@
 {% load static wagtailuserbar %}
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+{% load static %}
+
 
 <!DOCTYPE html>
 <html class="no-js" lang="en">
@@ -225,6 +229,13 @@
     }
   
   }
+
+     @media only screen and (max-width: 425px) {
+      .col{
+            font-size: small;
+        }
+      }
+
 		</style>
 
 
@@ -240,11 +251,11 @@
         <div class="container pt-3">
 			<div class="row justify-content-between">
 				<div class="col">
-					<a class="navbar-brand" style="font-size: xx-large; text-align: center; padding-bottom: 0%;" href="index.html">Technology And <span>Development Solutions Cell</span></a>
+					<a class="navbar-brand" style="font-size: xx-large; text-align: center; padding-bottom: 0%;" href="{% slugurl 'home' %}">Technology And <span>Development Solutions Cell</span></a>
 				</div>
 				 <div class="col d-flex justify-content-end"> 
 					<!-- <div class="social-media"> -->
-                        <img width="150" height="150" src="static/images/IIT_Bombay_color_logo.png" class="" style="padding-bottom: 10px;"> </a>
+                        <img width="150" height="150" src="{% static 'images/IIT_Bombay_color_logo.png' %}" class="" style="padding-bottom: 10px;"> </a>
 		    			<!--<p class="mb-0 d-flex">
 		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
 		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
@@ -269,8 +280,8 @@
         </form>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav mr-auto">
-	        	<li class="nav-item active"><a href="home_page.html" class="nav-link" style="font-size: large;">Home</a></li>
-	        	<li class="nav-item"><a href="about.html" class="nav-link" style="font-size: large;">About</a></li>
+	        	<li class="nav-item active"><a href="{% slugurl 'home' %}" class="nav-link" style="font-size: large;">Home</a></li>
+	        	<li class="nav-item"><a href="{% slugurl 'about-us' %}" class="nav-link" style="font-size: large;">About</a></li>
 	        	<li class="nav-item"><a href="services.html" class="nav-link" style="font-size: large;">Services</a></li>
 	        	<li class="nav-item"><a href="projects.html" class="nav-link" style="font-size: large;">Projects</a></li>
 	        	<li class="nav-item"><a href="resources.html" class="nav-link" style="font-size: large;">Resources</a></li>
@@ -278,7 +289,7 @@
               <li class="nav-item"><a href="contact.html" class="nav-link" style="font-size: large;">Contact</a></li>
               <!-- <li class="nav-item"><a href="contact.html" class="nav-link" style="font-size: large;">Contact</a></li> -->
 	        </ul>
-	      </div>
+        </div>
 	    </div>
 	  </nav>
     <!-- END nav -->
@@ -342,6 +353,7 @@
 	  <!-- Footer Section End -->
 
         {# Global javascript #}
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script type="text/javascript" src="{% static 'js/website_tdsc.js' %}"></script>
         <script src="{% static 'js/jquery.min.js' %}"></script>
       <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
@@ -360,6 +372,7 @@
 	  <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
   	  <script src="{% static 'js/swiper.min.js' %}"></script>
       <script src="{% static 'js/jquery.scrollbar.js' %}"></script>
+      <script src="{% static 'js/jquery-ui.js' %}"></script>
       <!-- <script src="{% static 'js/aos.js' %}"></script> -->
         {% block extra_js %}
             <!-- {# Override this in templates to add extra javascript #} -->
