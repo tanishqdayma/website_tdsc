@@ -50,3 +50,13 @@ class RichtextProposalBlock(blocks.StructBlock):
         icon = "doc-full"
         label = "Full RichText"
 
+# Services Page
+class ServicesInfoBlock(blocks.StructBlock):
+
+    point = blocks.CharBlock(required=True, help_text="Add a new service point")
+    info = blocks.RichTextBlock(icon='text')
+
+    class Meta: #noqa
+        template = 'streams/services_info_block.html'
+        icon='doc-full'
+        label = "Text and Information"

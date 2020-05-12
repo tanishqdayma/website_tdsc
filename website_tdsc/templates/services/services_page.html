@@ -1,0 +1,227 @@
+{% extends "base.html" %}
+{% load static wagtailuserbar %}
+{% load static %}
+{% load wagtailimages_tags %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+
+  #section-counter {
+    position: relative;
+    z-index: 0; }
+    #section-counter:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      content: '';
+      z-index: -1;
+      opacity: .9;
+      background: #0d1128;
+      background: #0d1128;
+      background: -moz-linear-gradient(45deg, #0d1128 0%, #fd6100 100%);
+      background: -webkit-gradient(left bottom, right top, color-stop(0%, #0d1128), color-stop(100%, #fd6100));
+      background: -webkit-linear-gradient(45deg, #0d1128 0%, #fd6100 100%);
+      background: -o-linear-gradient(45deg, #0d1128 0%, #fd6100 100%);
+      background: -ms-linear-gradient(45deg, #0d1128 0%, #fd6100 100%);
+      background: linear-gradient(45deg, #0d1128 0%, #fd6100 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d1128', endColorstr='#fd6100', GradientType=1 ); }
+
+      .ftco-counter {
+  overflow-x: hidden;
+  position: relative; }
+  @media (max-width: 1199.98px) {
+    .ftco-counter {
+      background-position: top center !important; } }
+  .ftco-counter .img-video {
+    width: 100%;
+    display: block; }
+    @media (max-width: 767.98px) {
+      .ftco-counter .img-video {
+        height: 300px; } }
+  .ftco-counter .icon span {
+    font-size: 50px;
+    color: #000000;
+    line-height: 1; }
+  .ftco-counter .block-18 {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px; }
+  .ftco-counter .text strong.number {
+    font-weight: 600;
+    font-size: 40px;
+    color: #fff;
+    display: block; }
+  .ftco-counter .text span {
+    display: block;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8); }
+  @media (max-width: 767.98px) {
+    .ftco-counter .counter-wrap {
+      margin-bottom: 20px; } }
+
+
+
+   
+
+  .ftco-animate {
+  opacity: 0;
+  visibility: hidden; }
+
+.ftco-no-pt {
+  padding-top: 0; }
+
+.ftco-no-pb {
+  padding-bottom: 0; }
+
+  .mb-5,
+.my-5 {
+  margin-bottom: 3rem !important; }
+
+  
+.bs-example{
+        margin: 20px;
+    }
+    .accordion .fa{
+        margin-right: 0.5rem;
+    }
+
+.btn-link{
+    color:black;
+}
+
+</style>
+
+{% endblock %}
+
+<!-- <section class="hero-wrap hero-wrap-2" style="background-image: url('/static/images/IMG_20180427_130235_1.jpg'); height: 250px;" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div> -->
+    <div class="container">
+      <div class="row no-gutters slider-text align-items-end"> 
+        <div class="col-md-9 ftco-animate pb-5" style="padding-top: 40px; height:50px;">
+            <p class="breadcrumbs mb-2"><span class="mr-2"><a href="{% slugurl 'home' %}">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Services<i class="ion-ios-arrow-forward"></i></span></p>
+          <h1 class="mb-0 bread"><b>Services</b></h1>
+        </div>
+      </div>
+    </div>
+  <!-- </section>  -->
+
+
+     
+    <section class="ftco-section" style="padding-top: 40px; padding-bottom: 20px;">
+    <div class="container" style="padding-bottom:0%">
+        
+        <div class="row">
+            <div class="col-md-12 wrap-about py-5 pr-md-4 ftco-animate"  style="text-align: justify;">
+                <!-- <h5 class="font-weight-bold">Proposal</h5> -->
+                <p>TDSC offers technical consulting services on projects serving the bottom 80% in the basic sectors of water, energy, sanitation, healthcare and agriculture. For existing systems, we offer status assessment, redesign, monitoring and evaluation services. For planned/new projects, we offer need-assessment, techno-economic feasibility study, detailed design, and monitoring of implementation.
+
+                    An additional objective of TDSC is to help develop a knowledge network of regional institutions working in the development sector. TDSC's outreach parallel will involve dissemination of outputs such as protocols and case studies generated through TDSC projects and live research.
+                    
+                    We aim to provide services to all groups engaged in the basic development sectors:
+                    <ul>
+                    <li>Gram panchayats, zilla parishads, district planning committees</li>
+                    <li>Municipal corporations and other urban local bodies</li>
+                    <li>Central and state government ministries and other policy makers</li>
+                    <li>NGOs, trusts, self-help groups and citizen groups, and other community-based organizations</li>
+                    <li>CSR divisions of corporates</li>
+                    <li>Academic institutions</li>
+                </ul></p>
+            </div>
+           
+        </div>
+    </div>
+</section>
+
+<section class="ftco-section ftco-no-pt ftco-no-pb">
+<div class="container" style="padding-top: 0%;">
+    <h2 class="font-weight-bold" style="padding-left:30px;">TDSC Services Offered:</h2>
+ <div class="bs-example">
+    <div class="accordion" id="accordionExample">
+        
+            {% for block in page.services_offered %}
+                {% include_block block %}
+            {% endfor %}
+        <!-- <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"><i class="fa fa-plus"></i> <b>What is Bootstrap?</b></button>
+                </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body">
+                    <p>Bootstrap is a sleek, intuitive, and powerful front-end framework for faster and easier web development. It is a collection of CSS and HTML conventions. <a href="https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank">Learn more.</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"><i class="fa fa-plus"></i><b> What is CSS?</b></button>                     
+                </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                    <p>CSS stands for Cascading Style Sheet. CSS allows you to specify various style properties for a given HTML element such as colors, backgrounds, fonts etc. <a href="https://www.tutorialrepublic.com/css-tutorial/" target="_blank">Learn more.</a></p>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>
+</div>
+</section>
+
+<section class="ftco-section ftco-no-pt ftco-no-pb">
+    <div class="container">
+        <div class="row d-flex no-gutters">
+
+              <div class="col-md-12 heading-section ftco-animate pl-md-4 py-md-4">
+                <h2 class="font-weight-bold">Execution mode and logistics</h2>
+                <div class="tabulation-2 mt-4">
+                                <ul class="nav nav-pills nav-fill d-md-flex d-block">
+                                  <li class="nav-item mb-md-0 mb-2">
+                                    <a class="nav-link active py-2" data-toggle="tab" href="#home1">IRCC</a>
+                                  </li>
+                                  <li class="nav-item px-lg-2 mb-md-0 mb-2">
+                                    <a class="nav-link py-2" data-toggle="tab" href="#home2">Team</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link py-2 mb-md-0 mb-2" data-toggle="tab" href="#home3">Thematic Areas & Projects</a>
+                                  </li>
+                                </ul>
+                                <div class="tab-content bg-light rounded mt-2"  style="text-align: justify;">
+                                  <div class="tab-pane container p-0 active" id="home1">
+                                      <p>{{ self.ircc|richtext }}</p>
+                                  </div>
+                                  <div class="tab-pane container p-0 fade" id="home2">
+                                      <p>{{ self.team|richtext }}</p>
+                                  </div>
+                                  <div class="tab-pane container p-0 fade" id="home3">
+                                      <p>{{ self.areas_and_projects|richtext }}</p>
+                                  </div>
+                                </div>
+                            </div>
+              <!-- </div> -->
+            <!-- </div> -->
+        </div>
+    </div>
+    </div>
+</section> 
+
+{% block extra_js %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+{% endblock %}
+
+{% endblock %}
