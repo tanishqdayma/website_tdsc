@@ -1,0 +1,184 @@
+{% extends "base.html" %}
+{% load static %}
+{% load wagtailimages_tags %}
+{% load static wagtailuserbar %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+{% block extra_css %}
+<style>
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+
+p {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #464444;
+}
+  .p.small {
+    font-size: 15px;
+  }
+
+
+.go-corner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  background-color: #00838d;
+  border-radius: 0 4px 0 32px;
+}
+
+.go-arrow {
+  margin-top: -4px;
+  margin-right: -4px;
+  color: white;
+  font-family: courier, sans;
+}
+
+* {
+  transition: all 0.3s ease-out;
+}
+
+
+
+.card2 {
+  display: block;
+  top: 0px;
+  position: relative;
+  max-width: 325px;
+  background-color: #f2f8f9;
+  border-radius: 4px;
+  padding: 32px 24px;
+  margin: 12px;
+  text-decoration: none;
+  z-index: 0;
+  overflow: hidden;
+  border: 1px solid #f2f8f9;
+}
+.card2:hover {
+    transition: all 0.2s ease-out;
+    box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+    top: -4px;
+    border: 1px solid #cccccc;
+    background-color: white;
+  }
+
+  .card2:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -16px;
+    right: -16px;
+    background: #00838d;
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    transform: scale(2);
+    transform-origin: 50% 50%;
+    transition: transform 0.15s ease-out;
+  }
+
+  .card2:hover:before {
+    transform: scale(2.15);
+  }
+
+
+
+
+
+</style>
+{% endblock %}
+
+<div class="container" style="padding-bottom: 60px;">
+  <div class="row no-gutters slider-text align-items-end"> 
+    <div class="col-md-9 ftco-animate pb-5" style="padding-top: 40px; height:50px;">
+        <p class="breadcrumbs mb-2"><span class="mr-2"><a href="{% slugurl 'home' %}">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Projects<i class="ion-ios-arrow-forward"></i></span></p>
+      <h1 class="mb-0 bread"><b>Projects</b></h1>
+    </div>
+  </div>
+</div>
+
+            <section class="latest-blog spad">
+                
+                  <div class="interior container clearfix">
+                    <div class="row">
+                      <h3 style="text-align: center; width:100%;">CURRENT PROJECTS</h3>
+                        {% for post in posts %}
+                            {% if post.type_of_project == "Current" %}
+                               
+                            
+                                    
+                                            <!-- <div class="col-xs-12 col-sm-6 col-md-4 blogBox moreBox" > -->
+                                                <a class="card2" href="{{ post.url }}">
+                                                <div class="item">
+                                                    
+                                              
+
+                                                    
+                                                    <!-- <a class="card2" href="#"> -->
+                                                      <h3 class="d" style="color: teal;">OPEN</h3>
+                                                      <p class="small" style="font-size: 14px;"><b>{{ post.title }}</b></p>
+                                                      
+                                                      <div class="go-corner" href="#">
+                                                        <div class="go-arrow">
+                                                          →
+                                                        </div>
+                                                      </div>
+                                                    <!-- </a> -->
+                                                
+                                       
+                                                </div>
+                                            <!-- </div> -->
+                                        </a>
+                                    {% endif %} 
+                            {% endfor %}
+                        </div>
+                    </div>
+
+
+
+
+                        <div class="interior container clearfix">
+                          <div class="row">
+                            <h3 style="text-align: center; width:100%;">COMPLETED PROJECTS</h3>
+                              {% for post in posts %}
+                                  {% if post.type_of_project == "Completed" %}    
+                                   
+                                          
+                                                  <!-- <div class="col-xs-12 col-sm-6 col-md-4 blogBox moreBox" > -->
+                                                      <a class="card2" href="{{ post.url }}">
+                                                      <div class="item">
+                                                          
+                                                    
+  
+                                                          
+                                                          <!-- <a class="card2" href="#"> -->
+                                                            <h3 class="d" style="color: teal;">OPEN</h3>
+                                                            <p class="small" style="font-size: 14px;"><b>{{ post.title }}</b></p>
+                                                            
+                                                            <div class="go-corner" href="#">
+                                                              <div class="go-arrow">
+                                                                →
+                                                              </div>
+                                                            </div>
+                                                          <!-- </a> -->
+                                                      
+                                             
+                                                      </div>
+                                                  <!-- </div> -->
+                                              </a>
+                                    {% endif %} 
+                                  {% endfor %}
+                              </div>
+                          </div>
+
+                      
+        </section>
+{% endblock %}

@@ -60,3 +60,31 @@ class ServicesInfoBlock(blocks.StructBlock):
         template = 'streams/services_info_block.html'
         icon='doc-full'
         label = "Text and Information"
+
+# Projects page
+class ProjectsIntendedOutcomesBlock(blocks.StructBlock):
+
+    intended_outcomes = blocks.RichTextBlock(icon='text')
+    
+    class Meta: #noqa
+        template = 'streams/projects_intended_outcomes_block.html'
+        icon='doc-full'
+        label = "Intended Outcomes"
+
+class ProjectsDocumentsBlock(blocks.StructBlock):
+
+    project_documents = blocks.RichTextBlock(icon='text') 
+
+    class Meta: #noqa
+        template = 'streams/projects_documents_block.html'
+        icon='doc-full'
+        label = "Project Documents"
+
+class ProjectsOutputsBlock(blocks.StructBlock):
+
+    project_outputs = blocks.RichTextBlock(icon='text')
+
+    class Meta: #noqa
+        template = 'streams/projects_outputs_block.html'
+        icon='doc-full'
+        label = "Project Outputs"

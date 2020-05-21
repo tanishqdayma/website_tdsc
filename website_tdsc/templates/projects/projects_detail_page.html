@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+{% load static wagtailuserbar %}
+{% load static %}
+{% load wagtailimages_tags %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+
+{% block extra_css %}
+
+<style>
+   .single-post-area .quote-wrapper {
+    line-height: 1.733;
+    color: rgb(136, 136, 136);
+    font-style: italic;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    background: rgba(130, 139, 178, 0.1);
+    padding: 15px;
+}
+
+.single-post-area .quotes {
+    background: rgb(255, 255, 255);
+    padding: 15px 15px 15px 20px;
+    border-left: 2px solid;
+}
+
+.blog_right_sidebar .single_sidebar_widget {
+    margin-bottom: 30px;
+    margin-top: 40px;
+    background: rgb(251, 249, 255);
+    padding: 30px;
+}
+article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
+    display: block;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+aside {
+    display: block;
+}
+
+.blog_right_sidebar .widget_title {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: "Rubik", sans-serif;
+    color: #001D38;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+dl, ol, ul {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+.blog_right_sidebar .post_category_widget .cat-list li a p {
+    margin-bottom: 0px;
+    margin-left: 40px;
+}
+
+
+.blog_right_sidebar .post_category_widget .cat-list li a {
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(136, 136, 136);
+}
+
+.blog_area a {
+    color: #007bff !important;
+    text-decoration: none;
+    /* transition: all 0.5s ease 0s; */
+}
+
+.d-flex {
+    display: -webkit-box!important;
+    display: -ms-flexbox!important;
+    display: flex!important;
+}
+
+</style>
+{% endblock %}
+<section class="blog_area single-post-area section-padding" style="padding-top: 60px;">
+<div class="container">
+   <div class="row no-gutters slider-text align-items-end"> 
+     <div class="ftco-animate pb-5" style="padding-top: 40px; height:50px; width:100%; padding-bottom: 20px;">
+         <p class="breadcrumbs mb-2"><span class="mr-2"><a href="{% slugurl 'home' %}">Home <i class="ion-ios-arrow-forward"></i></a></span> <span class="mr-2"><a href="{% slugurl 'projects' %}">Projects <i class="ion-ios-arrow-forward"></i></a></span></p>
+       <span class="" style="font-size:20px; padding-bottom: 30px;"><b>{{ self.title }}</b></span>
+     </div>
+   </div>
+ </div>
+
+
+
+    <div class="container">
+       <div class="row">
+          <div class="col-lg-8 posts-list" style="padding-top: 40px; text-align: justify;">
+             <div class="single-post">
+               {% if self.project_photo %}
+               {% image self.project_photo fill-4000x2000 as img %}
+               <div class="feature-img">
+                  <img class="img-fluid" src="{{ img.url }}" alt="">
+               </div>
+             {% else %}
+               
+             {% endif %}
+        
+                
+                <div class="blog_details" style="padding-top: 20px;">
+                   
+                   <h3>Project Description</h3>
+                   <p class="excert">
+                      {{ self.project_description|richtext }}
+                   </p>
+                  
+                  {% for block in page.content %}
+                     {% include_block block %}
+                  {% endfor %}
+                   
+                   
+                   
+                </div>
+             </div>
+          </div>
+          <div class="col-lg-4">
+             <div class="blog_right_sidebar">
+                  <aside class="single_sidebar_widget post_category_widget">
+                   <h4 class="widget_title" style="padding-bottom: 0%;"><b>Principal Investigator:</b></h4>
+                   {{ self.principal_investigator|richtext }}
+                </aside>
+                <aside class="single_sidebar_widget post_category_widget">
+                  <h4 class="widget_title" style="padding-bottom: 0%;"><b>Team:</b></h4>
+                   {{ self.team|richtext }}
+               </aside>
+             </div>
+          </div>
+       </div>
+    </div>
+ </section>
+ 
+ {% endblock %}
+

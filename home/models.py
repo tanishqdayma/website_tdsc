@@ -21,13 +21,9 @@ class HomePageCarouselImages(Orderable):
         on_delete=models.SET_NULL,
         related_name="+",
     )
-    # carousel_image_title = models.CharField(max_length = 100,blank=False,null=True)
-    # carousel_image_information = RichTextField(features=['bold', 'italic'],null=True,blank=True,default="Carousel Image Information")
-
+   
     panels = [
         ImageChooserPanel("carousel_image"),
-        # FieldPanel("carousel_image_title"),
-        # FieldPanel("carousel_image_information"),
         ]
 
 class HomePage(Page):
