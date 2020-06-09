@@ -1,0 +1,239 @@
+{% extends "base.html" %}
+{% load static wagtailuserbar %}
+{% load static %}
+{% load wagtailimages_tags %}
+{% load wagtailcore_tags %}
+
+{% block content %}
+
+{% block extra_css %}
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+
+  #section-counter {
+    position: relative;
+    z-index: 0; }
+    #section-counter:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      content: '';
+      z-index: -1;
+      opacity: .9;
+      background: #0d1128;
+      background: #0d1128;
+      background: -moz-linear-gradient(45deg, #0d1128 0%, #fd6100 100%);
+      background: -webkit-gradient(left bottom, right top, color-stop(0%, #0d1128), color-stop(100%, #fd6100));
+      background: -webkit-linear-gradient(45deg, #0d1128 0%, #fd6100 100%);
+      background: -o-linear-gradient(45deg, #0d1128 0%, #fd6100 100%);
+      background: -ms-linear-gradient(45deg, #0d1128 0%, #fd6100 100%);
+      background: linear-gradient(45deg, #0d1128 0%, #fd6100 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d1128', endColorstr='#fd6100', GradientType=1 ); }
+
+      .ftco-counter {
+  overflow-x: hidden;
+  position: relative; }
+  @media (max-width: 1199.98px) {
+    .ftco-counter {
+      background-position: top center !important; } }
+  .ftco-counter .img-video {
+    width: 100%;
+    display: block; }
+    @media (max-width: 767.98px) {
+      .ftco-counter .img-video {
+        height: 300px; } }
+  .ftco-counter .icon span {
+    font-size: 50px;
+    color: #000000;
+    line-height: 1; }
+  .ftco-counter .block-18 {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px; }
+  .ftco-counter .text strong.number {
+    font-weight: 600;
+    font-size: 40px;
+    color: #fff;
+    display: block; }
+  .ftco-counter .text span {
+    display: block;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8); }
+  @media (max-width: 767.98px) {
+    .ftco-counter .counter-wrap {
+      margin-bottom: 20px; } }
+
+
+  .ftco-animate {
+  opacity: 0;
+  visibility: hidden; }
+
+.ftco-no-pt {
+  padding-top: 0; }
+
+.ftco-no-pb {
+  padding-bottom: 0; }
+
+  .mb-5,
+.my-5 {
+  margin-bottom: 3rem !important; }
+
+  
+.bs-example{
+        margin: 20px;
+    }
+    .accordion .fa{
+        margin-right: 0.5rem;
+    }
+
+.btn-link{
+    color:black;
+}
+/* supervisor css */
+html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  .column {
+    float: left;
+    width: 25%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+  
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .title {
+    color: grey;
+  }
+  
+  .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .button:hover {
+    background-color: #555;
+  }
+
+/* engineers css */
+table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      width: 100%;
+      border: 1px solid #ddd;
+    }
+    
+    th, td {
+      text-align: left;
+      padding: 8px;
+    }
+    
+    tr:nth-child(even){background-color: #f2f2f2}
+</style>
+
+{% endblock %}
+
+<!-- <section class="hero-wrap hero-wrap-2" style="background-image: url('/static/images/IMG_20180427_130235_1.jpg'); height: 250px;" data-stellar-background-ratio="0.5">
+    <div class="overlay"></div> -->
+    <div class="container" style="padding-bottom: 60px; width: 100%;">
+      <div class="row no-gutters slider-text align-items-end"> 
+        <div class="col-md-9 ftco-animate pb-5" style="padding-top: 40px; height:50px;">
+            <p class="breadcrumbs mb-2"><span class="mr-2"><a href="{% slugurl 'home' %}">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Contact<i class="ion-ios-arrow-forward"></i></span></p>
+          <h1 class="mb-0 bread"><b>TDSC Team</b></h1>
+          <p style="padding-top: 20px; width: 100%;">TDSC is run by joint efforts of IITB faculty members, TDSC staff and IITB students.<br>
+            The current core team is listed below.</p>
+        </div>
+      </div>
+    </div>
+  <!-- </section>  -->
+
+
+    <section class="" style="padding-top: 20px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 wrap-about py-5 pr-md-4 ftco-animate"  style="text-align: justify;">
+                    <h5 class="font-weight-bold">TDSC Supervisors</h5>
+                    {% for block in page.supervisors %}
+                        {% include_block block %}
+                    {% endfor %}
+                </div>
+            
+            </div>
+        </div>
+    </section>
+
+    <section class="" style="padding-top: 0%; padding-bottom: 0%;">
+        <div class="container" style="padding-top: 0%;">
+            <div class="row">
+                <div class="col-md-12 wrap-about py-5 pr-md-4 ftco-animate"  style="text-align: justify;">
+                    <h5 class="font-weight-bold">Project Manager</h5>
+                    <p>{{ self.project_manager|richtext }}</p>
+                </div>
+               
+            </div>
+        </div>
+    </section>
+
+    <section class="" style="padding-top: 0%; padding-bottom: 0%;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 wrap-about py-5 pr-md-4 ftco-animate"  style="text-align: justify;">
+                    <h5 class="font-weight-bold">Project Engineers</h5>
+                    {% for block in page.project_engg %}
+                        {% include_block block %}
+                    {% endfor %}
+                </div>
+            
+            </div>
+        </div>
+    </section>
+
+{% block extra_js %}
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script> -->
+<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Latest compiled Bootstrap JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+{% endblock %}
+
+{% endblock %}

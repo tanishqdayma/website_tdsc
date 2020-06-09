@@ -1,0 +1,28 @@
+{% load wagtailcore_tags %}
+{% load static %}
+
+<table class="table table-hover">
+<h3 class="font-weight-bold">{{ self.heading }}</h3>
+<thead>
+    <tr>
+        <th> S.No. </th>
+        <th> Title </th>
+        <th> Venue </th>
+        <th> Dates </th>
+        <th> Attendees </th>
+        <th> Host </th>
+    </tr>
+</thead> 
+<tbody>
+    {% for i in self.points %}
+    <tr>
+        <td> {{ i.SNo }} </td>
+        <td> {{ i.title }} </td>
+        <td> {{ i.venue }} </td>
+        <td> {{ i.dates }} </td>
+        <td> {{ i.attendees }} </td>
+        <td> {{ i.host }} </td>
+    </tr> 
+    {% endfor %}
+</tbody>
+</table>

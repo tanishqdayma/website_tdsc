@@ -1,0 +1,28 @@
+{% load wagtailcore_tags %}
+{% load static %}
+
+
+<p>{{ self.info|richtext }}</p>
+
+<div style="overflow-x:auto;">
+    {% for i in self.points %}
+    <br>
+    <h6>{{ i.title }}</h6>    
+    <table>        
+      <tr>
+        <th>Name</th>
+        <th>Designation</th>
+        <th>Email</th>
+        <th>Contact No.</th>
+      </tr>
+      {% for j in i.members %}
+      <tr>
+        <td>{{ j.name }}</td>
+        <td>{{ j.designation }}</td>
+        <td>{{ j.email }}</td>
+        <td>{{ j.contact_no }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    {% endfor %}
+</div>

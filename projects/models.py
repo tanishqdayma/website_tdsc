@@ -40,7 +40,7 @@ class ProjectListingPage(Page):
 
 
 class ProjectDetailPage(Page):
-    """Workshop detail page."""
+    """Project detail page."""
 
     template = "projects/projects_detail_page.html"
 

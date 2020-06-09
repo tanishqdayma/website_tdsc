@@ -1,0 +1,26 @@
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
+{% load static %}
+
+
+<p>{{ self.info|richtext }}</p>
+<br>
+
+<div class="row">
+{% for i in self.cards %}
+{% image i.photo fill-550x500 as img %}
+  <div class="column">
+    <div class="card">
+      <img src="{{ img.url }}" alt="Image" style="width:100%">
+      <div class="container" style="padding-top: 10px;">
+        <h6>{{ i.name }}</h6>
+        <p class="title">{{ i.Dept }}</p>
+        <p>{{ i.contact }}</p>
+        <!-- <p>example@example.com</p> -->
+        <a href="{{ i.website }}"><p><button class="button">Website</button></p></a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+     

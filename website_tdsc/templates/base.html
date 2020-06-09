@@ -41,18 +41,84 @@
         <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
         <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
         <link rel="stylesheet" href="{% static 'css/website_tdsc.css' %}">
-        <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}">
+        <!-- <link rel="stylesheet" href="{% static 'fonts/icomoon/style.css' %}"> -->
 
         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' ">
-        <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}">
-        <link rel="stylesheet" href="{% static 'css/jquery.scrollbar.css' %}">
+        <!-- <link rel="stylesheet" href="{% static 'fonts/flaticon/font/flaticon.css' %}"> -->
+        <!-- <link rel="stylesheet" href="{% static 'css/jquery.scrollbar.css' %}"> -->
 
         <link rel="stylesheet" href="{% static 'css/fancybox.min.css' %}">
-        <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
-        <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}">
+        <!-- <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}"> -->
+        <!-- <link rel="stylesheet" href="{% static 'css/jquery-ui.css' %}"> -->
         <!-- <link rel="stylesheet" href="{% static 'css/aos.css' %}"> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 		<style>
+
+    
+.hide {
+    display: none;
+}
+
+@media only screen and (max-width: 400px) {
+
+              .col,
+              .span{
+                text-align: left;
+                font-size: 20px;
+                display: block;
+                float: left;
+                margin-right: 0.4em;
+                
+              }
+              
+              span .fullform {
+                text-align: left;
+                font-size: 20px;
+                display: block;
+                float: left;
+                margin-right: 0.4em;
+                
+              }
+              .desktop-show {
+                      display: initial;
+                  }
+            }
+            
+            .imp{
+              float: right;
+            }
+      
+            @media only screen and (max-width: 350px) {
+              span .fullform {
+                text-align: left;
+                font-size: 20px;
+                display: block;
+                float: left;
+                margin-right: 0.4em;
+                
+              }
+              .desktop-show {
+                      display: initial;
+                  }
+            }
+            
+
+
+          @media only screen and (min-width:450px){
+              span .fullform {
+                  text-align: center;
+                  font-size: 25px;
+                  display: block;
+                  float: left;
+                  margin-right: 0.4em;
+              }
+      
+              }
+
+
+
 			  footer{
     /* position: fixed; */
     bottom: 0;
@@ -236,6 +302,9 @@
         }
       }
 
+  
+
+
 		</style>
 
 
@@ -250,12 +319,17 @@
         <!-- header section begins -->
         <div class="container pt-3">
 			<div class="row justify-content-between">
-				<div class="col">
-					<a class="navbar-brand" style="font-size: xx-large; text-align: center; padding-bottom: 0%;" href="{% slugurl 'home' %}">Technology And <span>Development Solutions Cell</span></a>
+        <div class="col d-flex justify-content-end"> 
+        <img width="150" height="150" src="{% static 'images/IIT_Bombay_color_logo.png' %}" class="" style="padding-bottom: 10px;"> </a>
+        </div>
+        <div class="col" style="padding-left: 100px;">
+					<a class="navbar-brand" style="font-size: 40px; text-align: center; padding-bottom: 0%;  padding-left: 0%;" href="{% slugurl 'home' %}">TDSC<br><span class="fullform" style="font-size: x-large; margin-left: 5px;">Technology and Development <br class="hide desktop-show"> Solutions Cell</span></a>
 				</div>
-				 <div class="col d-flex justify-content-end"> 
-					<!-- <div class="social-media"> -->
-                        <img width="150" height="150" src="{% static 'images/IIT_Bombay_color_logo.png' %}" class="" style="padding-bottom: 10px;"> </a>
+				<div class="col d-flex justify-content-end"> 
+          <img width="200" height="150" src="{% static 'images/logo2.png' %}" class="" style="padding-bottom: 10px;"> </a>
+        </div> 
+          <!-- <div class="social-media"> -->
+
 		    			<!--<p class="mb-0 d-flex">
 		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
 		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
@@ -263,7 +337,7 @@
 		    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
 		    		</p>
 	        </div> -->
-				</div> 
+				
 			</div>
 		</div>
 		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar" style="background-color: #020421 !important;">
@@ -272,7 +346,7 @@
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="fa fa-bars"></span> Menu
 	      </button>
-				<form action="#" class="searchform order-lg-last">
+				<form action="#" class="searchform order-lg-last" >
           <div class="form-group d-flex">
             <input type="text" class="form-control pl-3" style="font-size: large;" placeholder="Search">
             <button type="submit" placeholder="" class="form-control search"><span class="fa fa-search"></span></button>
@@ -280,13 +354,13 @@
         </form>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav mr-auto">
-	        	<li class="nav-item active"><a href="{% slugurl 'home' %}" class="nav-link" style="font-size: large;">Home</a></li>
+	        	<li class="nav-item active"><a href="{% slugurl 'home' %}" class="nav-link active" style="font-size: large;">Home</a></li>
 	        	<li class="nav-item"><a href="{% slugurl 'about-us' %}" class="nav-link" style="font-size: large;">About</a></li>
 	        	<li class="nav-item"><a href="{% slugurl 'services' %}" class="nav-link" style="font-size: large;">Services</a></li>
 	        	<li class="nav-item"><a href="{% slugurl 'projects' %}" class="nav-link" style="font-size: large;">Projects</a></li>
-	        	<li class="nav-item"><a href="resources.html" class="nav-link" style="font-size: large;">Resources</a></li>
-              <li class="nav-item"><a href="outreach.html" class="nav-link" style="font-size: large;">Outreach</a></li>
-              <li class="nav-item"><a href="contact.html" class="nav-link" style="font-size: large;">Contact</a></li>
+	        	<li class="nav-item"><a href="{% slugurl 'resources' %}" class="nav-link" style="font-size: large;">Resources</a></li>
+              <li class="nav-item"><a href="{% slugurl 'outreach' %}" class="nav-link" style="font-size: large;">Outreach</a></li>
+              <li class="nav-item"><a href="{% slugurl 'contact' %}" class="nav-link" style="font-size: large;">Contact</a></li>
               <!-- <li class="nav-item"><a href="contact.html" class="nav-link" style="font-size: large;">Contact</a></li> -->
 	        </ul>
         </div>
@@ -370,18 +444,33 @@
       <script src="{% static 'js/google-map.js' %}"></script>
 	  <script src="{% static 'js/main.js' %}"></script>
 	  <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
-  	  <script src="{% static 'js/swiper.min.js' %}"></script>
-      <script src="{% static 'js/jquery.scrollbar.js' %}"></script>
-      <script src="{% static 'js/jquery-ui.js' %}"></script>
+  	  <!-- <script src="{% static 'js/swiper.min.js' %}"></script> -->
+      <!-- <script src="{% static 'js/jquery.scrollbar.js' %}"></script> -->
+      <!-- <script src="{% static 'js/jquery-ui.js' %}"></script> -->
       
       <!-- <script src="{% static 'js/aos.js' %}"></script> -->
-        {% block extra_js %}
+        
             <!-- {# Override this in templates to add extra javascript #} -->
             <script>
               window.onbeforeunload = function () {
-                window.scrollTo(0, 0);
-              }
+                window.scrollTo(0,0);
+            };
+
+            $('#containerContainingTabs a').on('click', function(e) {
+              e.preventDefault();
+              $(this).tab('show');
+              var theThis = $(this);
+              $('#containerContainingTabs a').removeClass('active');
+              theThis.addClass('active');
+            });
+            
+            // $('.navbar-nav .nav-link').click(function(){
+            //   $('.navbar-nav .nav-link').removeClass('active');
+            //   $(this).addClass(' active');
+            // })
+            
             </script>
+        {% block extra_js %}
         {% endblock %}
     </body>
 </html>

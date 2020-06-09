@@ -1,0 +1,50 @@
+{% load wagtailcore_tags %}
+{% load static %}
+
+<div class="card">
+<div class="card-header" id="headingOne">
+    <h2 class="mb-0">
+        <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#a{{ forloop.counter }}"><i class="fa fa-plus"></i><b>{{ self.heading }}</b></button>									
+    </h2>
+</div>
+<div id="a{{ forloop.counter }}" class="collapse {% if forloop.counter == 1 %}show{% endif %}" aria-labelledby="headingOne" data-parent="#accordionExample">
+    {% for i in self.points %}
+    <div class="card-body">
+        <p>
+            <h5>{{ i.title }}</h5>
+            {% for j in i.info %}
+            <div class="tab-pane container p-0 active" id="home1">
+                <p><ul>
+
+                <li style="color: #212529;">{{ j.point }}
+                    {% if j.pdf %}
+                    <a href="{{ j.pdf.url }}">pdf</a>
+                    {% endif %}
+                </li>
+                  
+            </div>
+            {% endfor %}
+
+        </p>
+    </div>
+    {% endfor %}
+</div>
+</div>
+
+{% block extra_js %}
+<script>
+    $(document).ready(function(){
+       // Add minus icon for collapse element which is open by default
+       $(".collapse.show").each(function(){
+           $(this).prev(".card-header").find(".fa").addClass("fa-minus").removeClass("fa-plus");
+       });
+       
+       // Toggle plus minus icon on show hide of collapse element
+       $(".collapse").on('show.bs.collapse', function(){
+           $(this).prev(".card-header").find(".fa").removeClass("fa-plus").addClass("fa-minus");
+       }).on('hide.bs.collapse', function(){
+           $(this).prev(".card-header").find(".fa").removeClass("fa-minus").addClass("fa-plus");
+       });
+   });
+</script>
+{% endblock %}

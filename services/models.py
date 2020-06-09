@@ -11,7 +11,7 @@ from streams import blocks
 
 
 class ServicesPage(Page):
-    """About page class""" 
+    """Services page class""" 
 
     template = "services/services_page.html"
 
